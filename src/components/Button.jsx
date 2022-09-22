@@ -21,20 +21,15 @@ function Button({ children, size, ...otherProps }) {
     small,
   };
 
- 
-
   let height = sizes[size].height;
   let width = sizes[size].width;
 
   return (
     <button
+      className="button"
       style={{
         width: width,
         height: height,
-        borderRadius: "8px",
-        backgroundColor: "black",
-        color: "white",
-        cursor: "pointer",
       }}
       {...otherProps}
     >
