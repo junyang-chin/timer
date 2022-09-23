@@ -91,12 +91,12 @@ function App() {
         </div>
 
         <Button
-          children="Start/Pause"
+          children={timerState === true ? "Pause" : "Start"}
           size="medium"
+          className="hover-invert"
           onClick={(event) => {
             handleStart(event);
           }}
-          className="hover-invert"
           disabled={hours + minutes + seconds === 0}
         ></Button>
       </div>
