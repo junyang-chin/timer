@@ -72,9 +72,12 @@ function App() {
   function handleStart(event) {
     event.preventDefault();
     setTimerState((prevState) => !prevState);
-    // console.log(timerState);
   }
 
+  // disable/enable button
+  function handleButtonState() {
+    return hours + minutes + seconds === 0 ? true : false;
+  }
   return (
     <section
       id="main"
@@ -93,6 +96,8 @@ function App() {
           onClick={(event) => {
             handleStart(event);
           }}
+          className="hover-invert"
+          disabled={hours + minutes + seconds === 0}
         ></Button>
       </div>
 
@@ -106,7 +111,7 @@ function App() {
         <Input id="hours" size="medium" min="0" max="59"></Input>
         <Input id="minutes" size="medium" min="0" max="59"></Input>
         <Input id="seconds" size="medium" min="0" max="59"></Input>
-        <Button children="Submit" size="medium"></Button>
+        <Button id="set" children="Set" size="medium"></Button>
       </form>
     </section>
   );

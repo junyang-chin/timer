@@ -1,4 +1,4 @@
-function Button({ children, size, ...otherProps }) {
+function Button({ id, children, size, ...otherProps }) {
   // define button height and width
 
   //   three sizes
@@ -26,7 +26,7 @@ function Button({ children, size, ...otherProps }) {
 
   return (
     <button
-      className="button"
+      id={id}
       style={{
         width: width,
         height: height,
